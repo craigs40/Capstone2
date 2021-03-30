@@ -1,0 +1,11 @@
+number_of_errors = []
+no_errors = number_of_errors.nil?
+
+
+1+2=3
+
+if no_errors
+  puts "\n0 errors"
+else
+puts "\n#{number_of_errors.count} errors"
+end
