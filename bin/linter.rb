@@ -10,3 +10,5 @@ if no_errors
 else
   puts "\n#{number_of_errors.count} errors"
 end
+
+puts "\n#{number_of_errors}"
