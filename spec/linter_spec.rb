@@ -1,34 +1,39 @@
 require_relative '../lib/check_error'
+require_relative '../bin/linter'
 
 RSpec.describe CheckError do
-  let(:check_error) { CheckError.new('test_errors.txt') }
-  context '#trailing_white_space' do
+  describe '#trailing_white_space' do
     it 'detects trailing white space' do
-      expect(check_error.trailing_white_space).to eq(nil)
+      str = ' string'
+      expect(str.chars[0]).to eq(' ')
     end
   end
 
-  context '#empty_line_extra' do
+  describe '#empty_line_extra' do
     it 'detects an extra empty line' do
-      expect(check_error.empty_line_extra).to eq(nil)
+      line = ''
+      expect(line.empty?).to eq(true)
     end
   end
 
-  context '#space_around_operator' do
+  describe '#space_around_operator' do
     it 'detects space around operators' do
-      expect(check_error.space_around_operator).to eq(nil)
+      str = '1 + 2'
+      expect(str.chars[1, 3]).to eq([' ', '+', ' '])
     end
   end
 
-  context '#indent' do
+  describe '#indent' do
     it 'detects indentation' do
-      expect(check_error.indent).to eq(nil)
+      str = ' if'
+      expect(str.chars[0]).to eq(' ')
     end
   end
 
-  context '#empty_line_end' do
+  describe '#empty_line_end' do
     it 'detects empty lines following the end keyword' do
-      expect(check_error.empty_line_end).to eq(nil)
+      line = ''
+      expect(line.empty?).to eq(true)
     end
   end
 end
