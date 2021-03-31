@@ -9,6 +9,5 @@ if no_errors
   puts "\n0 errors"
 else
   puts "\n#{number_of_errors.count} errors"
+  puts "\n#{number_of_errors}"
 end
-
-puts "\n#{number_of_errors}"
