@@ -8,5 +8,5 @@ no_errors = number_of_errors.nil?
 if no_errors
   puts "\n0 errors"
 else
-  puts "\n#{number_of_errors.count} errors"
+  puts "\n#{number_of_errors.each} errors"
 end
