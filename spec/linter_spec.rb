@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require_relative '../lib/check_error'
 require_relative '../bin/linter'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe CheckError do
   describe '#trailing_white_space' do
     it 'detects trailing white space' do
@@ -37,3 +40,4 @@ RSpec.describe CheckError do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
