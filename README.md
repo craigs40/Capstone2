@@ -12,7 +12,8 @@ In this project, I've built a Ruby linter for beginners, providing feedback for 
 
 ## Getting Started:
 1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run git clone.
-2. Navigate to the ruby file you would like to lint and add linter.rb to your root directory
+2. Navigate to the project folder
+3. Run linter.rb --(yourfile) to check your code for linter errors.
 
 ## Built With
 
