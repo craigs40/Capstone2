@@ -1,13 +1,17 @@
 # !/usr/bin/env ruby
+# frozen_string_literal: true
 
 require_relative '../lib/check_error'
 
-number_of_errors = []
-no_errors = number_of_errors.nil?
+checking = CheckError.new
+checking.trailing_white_space
+checking.empty_line_extra
+checking.space_around_operator
+checking.indent
+checking.empty_line_end
 
-if no_errors
-  puts "\n0 errors"
+if @number_of_errors.nil?
+  puts "no errors"
 else
-  puts "\n#{number_of_errors.count} errors"
-  puts "\n#{number_of_errors}"
+  puts @number_of_errors
 end

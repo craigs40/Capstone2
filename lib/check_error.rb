@@ -1,25 +1,43 @@
-require_relative '../bin/linter'
+# frozen_string_literal: true
 
 # checking errors
 class CheckError
+  attr_accessor :number_of_errors
+
+  def initialize
+    @number_of_errors = []
+    @operator = ['+', '-', '>', '<', '!', '*', '=']
+  end
+
   def trailing_white_space
-    number_of_errors << ['Line ends with trailing white space.'] if line.end_with?(' ')
+    File.foreach('./test_file.txt') do |str|
+      @number_of_errors << ['Line ends with trailing white space.'] if !str.strip.empty? && str[-2] == ' '
+    end
   end
 
   def empty_line_extra
-    number_of_errors << ['Extra empty line detected.'] if line == '' && line[index - 1] == ''
+    File.foreach('./test_file.txt') do |str|
+      @number_of_errors << ['Extra empty line detected.'] if str.strip.empty?
+    end
   end
 
   def space_around_operator
-    operator = '+', '-', '>', '<', '!', '*', '='
-    number_of_errors << ['Add space around operators.'] unless operator.start_with?(' ') && operator.end_with?(' ')
+    File.foreach('./test_file.txt') do
+      unless @operator.to_s.start_with?(' ') && @operator.end_with?(' ')
+        @number_of_errors << ['Add space around operators.']
+      end
+    end
   end
 
   def indent
-    number_of_errors << ['Line should be indented.'] unless line.start_with?('class', 'def', 'end')
+    File.foreach('./test_file.txt') do |str|
+      @number_of_errors << ['Line should be indented.'] unless str.start_with?('class', 'module')
+    end
   end
 
   def empty_line_end
-    number_of_errors << ['Add empty line after end keyword.'] if line.end_with?('end')
+    File.foreach('./test_file.txt') do |str|
+      @number_of_errors << ['Add empty line after end keyword.'] if str.start_with?('end')
+    end
   end
 end
