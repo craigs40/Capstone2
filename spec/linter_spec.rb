@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../lib/check_error'
 # rubocop:disable Metrics/BlockLength
 RSpec.describe CheckError do

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # checking errors
 class CheckError
   attr_accessor :number_of_errors
