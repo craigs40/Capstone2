@@ -11,9 +11,9 @@ In this project, I've built a Ruby linter for beginners, providing feedback for 
 5. Empty line after "end" keyword
 
 ## Getting Started:
-1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run git clone.
+1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run 'git clone' with this repository url.
 2. Navigate to the project folder
-3. Run linter.rb --(yourfile) to check your code for linter errors.
+3. Run linter.rb to check the test file for linter errors.
 
 ## Built With
 
