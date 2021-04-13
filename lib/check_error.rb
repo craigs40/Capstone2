@@ -5,6 +5,7 @@ class CheckError
 
   def initialize
     $number_of_errors = []
+    @number_of_errors = $number_of_errors
     @file = File.foreach('../test_file.txt')
   end
 
