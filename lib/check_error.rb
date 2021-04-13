@@ -1,41 +1,51 @@
-# checking errors
+# checking error
 class CheckError
-  attr_accessor :number_of_errors
+  attr_reader :number_of_errors
 
   def initialize
-    @number_of_errors = []
-    @operator = ['+', '-', '>', '<', '!', '*', '=']
+    $number_of_errors = []
+    @file = File.foreach('../test_file.txt')
   end
 
   def trailing_white_space
-    File.foreach('./test_file.txt') do |str|
-      @number_of_errors << ['Line ends with trailing white space.'] if !str.strip.empty? && str[-2] == ' '
+    @file.each_with_index do |str, index|
+      if !str.strip.empty? && str[-2] == ' '
+        $number_of_errors << ["Line #{index + 1} ends with trailing white space."]
+      end
     end
   end
 
   def empty_line_extra
-    File.foreach('./test_file.txt') do |str|
-      @number_of_errors << ['Extra empty line detected.'] if str.strip.empty?
+    @file.with_index do |str, index|
+      if str.strip.empty?
+        $number_of_errors << ["Line #{index + 1}: Extra empty line detected."]
+      end
     end
   end
 
   def space_around_operator
-    File.foreach('./test_file.txt') do
-      unless @operator.to_s.start_with?(' ') && @operator.end_with?(' ')
-        @number_of_errors << ['Add space around operators.']
+    @file.with_index do |str, index|
+      if str.include?('=')
+        $number_of_errors << ["Line #{index + 1}: Add space around operators."]
       end
     end
   end
 
   def indent
-    File.foreach('./test_file.txt') do |str|
-      @number_of_errors << ['Line should be indented.'] unless str.start_with?('class', 'module')
+    @file.each_with_index do |str, index|
+      next if str.strip.empty?
+
+      unless str.start_with?('class', 'module', 'end') || str.start_with?('  ')
+        $number_of_errors << ["Line #{index + 1} should be indented."]
+      end
     end
   end
 
   def empty_line_end
-    File.foreach('./test_file.txt') do |str|
-      @number_of_errors << ['Add empty line after end keyword.'] if str.start_with?('end')
+    @file.with_index do |str, index|
+      if str.start_with?('end')
+        $number_of_errors << ["Line #{index + 1}: Add empty line after end keyword."]
+      end
     end
   end
 end

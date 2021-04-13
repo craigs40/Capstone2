@@ -9,8 +9,8 @@ checking.space_around_operator
 checking.indent
 checking.empty_line_end
 
-if @number_of_errors.nil?
+if $number_of_errors.nil?
   puts 'no errors'
 else
-  puts @number_of_errors
+  puts $number_of_errors
 end

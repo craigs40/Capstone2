@@ -10,7 +10,7 @@ RSpec.describe CheckError do
     end
     it 'returns trailing space error' do
       checking.trailing_white_space
-      expect(checking.number_of_errors[0]).to eq(['Line ends with trailing white space.'])
+      expect(checking.number_of_errors[0]).to eq(['Line 1 ends with trailing white space.'])
     end
   end
 
@@ -21,7 +21,7 @@ RSpec.describe CheckError do
     end
     it 'returns extra empty line error' do
       checking.empty_line_extra
-      expect(checking.number_of_errors[0]).to eq(['Extra empty line detected.'])
+      expect(checking.number_of_errors[0]).to eq(['Line 2: Extra empty line detected.'])
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe CheckError do
     end
     it 'returns space around operator error' do
       checking.space_around_operator
-      expect(checking.number_of_errors[0]).to eq(['Add space around operators.'])
+      expect(checking.number_of_errors[0]).to eq(['Line 5: Add space around operators.'])
     end
   end
 
@@ -43,7 +43,7 @@ RSpec.describe CheckError do
     end
     it 'returns indent error' do
       checking.indent
-      expect(checking.number_of_errors[0]).to eq(['Line should be indented.'])
+      expect(checking.number_of_errors[0]).to eq(['Line 4 should be indented.'])
     end
   end
 
@@ -54,7 +54,7 @@ RSpec.describe CheckError do
     end
     it 'returns error if there is no empty line after end' do
       checking.empty_line_end
-      expect(checking.number_of_errors[0]).to eq(['Add empty line after end keyword.'])
+      expect(checking.number_of_errors[0]).to eq(['Line 8: Add empty line after end keyword.'])
     end
   end
 end
