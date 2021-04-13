@@ -10,19 +10,18 @@ In this project, I've built a simplified Ruby linter for beginners, providing fe
 4. Indentation
 5. Empty line after "end" keyword
 
-![linterrb](https://user-images.githubusercontent.com/71286979/114502210-6b0b5980-9bf9-11eb-8636-ffdd7bccf517.png)
+![linterrb](https://user-images.githubusercontent.com/71286979/114536058-b84df200-9c1e-11eb-8dcc-cd57671bf5a3.png)
 
 ## Getting Started:
 1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run 'git clone' with this repository's url.
-2. Navigate to the bin folder.
-3. Run linter.rb to check the test_file.txt for linter errors.
+2. Navigate to the project folder. (Capstone2 folder)
+3. Run linter.rb on the command line to check the test_file.txt for linter errors.
 
 ## Testing the code:
-1. In order to run rspec successfully in this project, open check_error.rb and change the file path in the @file variable from ('../test_file.txt') to ('./test_file.txt')
-2. In the Terminal/Command Prompt, navigate to the parent directory of this project. (Capstone2 folder)
-3. Run rspec
+1. In the Terminal/Command Prompt, navigate to the parent directory of this project. (Capstone2 folder)
+2. Run rspec on the command line.
 
-![rspeclinter](https://user-images.githubusercontent.com/71286979/114503588-92632600-9bfb-11eb-9b51-964ec7a1c73e.png)
+![rspeclinter](https://user-images.githubusercontent.com/71286979/114536182-d287d000-9c1e-11eb-98f3-d1d0a8e7e103.png)
 
 ## Built With
 
