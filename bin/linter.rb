@@ -1,5 +1,5 @@
 # !/usr/bin/env ruby
-
+# rubocop:disable Style/GlobalVars
 require_relative '../lib/check_error'
 
 checking = CheckError.new
@@ -14,3 +14,4 @@ if $number_of_errors.nil?
 else
   puts $number_of_errors
 end
+# rubocop:enable Style/GlobalVars

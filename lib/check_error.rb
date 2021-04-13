@@ -1,4 +1,5 @@
 # checking error
+# rubocop:disable Style/GlobalVars
 class CheckError
   attr_reader :number_of_errors
 
@@ -9,25 +10,19 @@ class CheckError
 
   def trailing_white_space
     @file.each_with_index do |str, index|
-      if !str.strip.empty? && str[-2] == ' '
-        $number_of_errors << ["Line #{index + 1} ends with trailing white space."]
-      end
+      $number_of_errors << ["Line #{index + 1} ends with trailing white space."] if !str.strip.empty? && str[-2] == ' '
     end
   end
 
   def empty_line_extra
     @file.with_index do |str, index|
-      if str.strip.empty?
-        $number_of_errors << ["Line #{index + 1}: Extra empty line detected."]
-      end
+      $number_of_errors << ["Line #{index + 1}: Extra empty line detected."] if str.strip.empty?
     end
   end
 
   def space_around_operator
     @file.with_index do |str, index|
-      if str.include?('=')
-        $number_of_errors << ["Line #{index + 1}: Add space around operators."]
-      end
+      $number_of_errors << ["Line #{index + 1}: Add space around operators."] if str.include?('=')
     end
   end
 
@@ -43,9 +38,8 @@ class CheckError
 
   def empty_line_end
     @file.with_index do |str, index|
-      if str.start_with?('end')
-        $number_of_errors << ["Line #{index + 1}: Add empty line after end keyword."]
-      end
+      $number_of_errors << ["Line #{index + 1}: Add empty line after end keyword."] if str.start_with?('end')
     end
   end
 end
+# rubocop:enable Style/GlobalVars
