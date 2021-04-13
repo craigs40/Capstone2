@@ -1,4 +1,4 @@
-require_relative '../lib/check_error'
+require_relative '../check_error'
 # rubocop:disable Metrics/BlockLength
 RSpec.describe CheckError do
   let(:checking) { CheckError.new }

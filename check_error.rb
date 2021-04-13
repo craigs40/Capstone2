@@ -6,7 +6,7 @@ class CheckError
   def initialize
     $number_of_errors = []
     @number_of_errors = $number_of_errors
-    @file = File.foreach('../test_file.txt')
+    @file = File.foreach('./test_file.txt')
   end
 
   def trailing_white_space

@@ -1,6 +1,6 @@
 # !/usr/bin/env ruby
 # rubocop:disable Style/GlobalVars
-require_relative '../lib/check_error'
+require_relative './check_error'
 
 checking = CheckError.new
 checking.trailing_white_space
