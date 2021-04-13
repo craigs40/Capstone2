@@ -1,5 +1,10 @@
-# checking error
 # rubocop:disable Style/GlobalVars
+# rubocop:disable Metrics/AbcSize
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/MethodLength
+# rubocop:disable Metrics/PerceivedComplexity
+
+# checking error
 class CheckError
   attr_reader :number_of_errors
 
@@ -23,7 +28,17 @@ class CheckError
 
   def space_around_operator
     @file.with_index do |str, index|
+      next if str.include?(' = ')
+      next if str.include?(' + ')
+      next if str.include?(' - ')
+      next if str.include?(' * ')
+      next if str.include?(' & ')
+
       $number_of_errors << ["Line #{index + 1}: Add space around operators."] if str.include?('=')
+      $number_of_errors << ["Line #{index + 1}: Add space around operators."] if str.include?('+')
+      $number_of_errors << ["Line #{index + 1}: Add space around operators."] if str.include?('-')
+      $number_of_errors << ["Line #{index + 1}: Add space around operators."] if str.include?('*')
+      $number_of_errors << ["Line #{index + 1}: Add space around operators."] if str.include?('&')
     end
   end
 
@@ -44,3 +59,7 @@ class CheckError
   end
 end
 # rubocop:enable Style/GlobalVars
+# rubocop:enable Metrics/AbcSize
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/MethodLength
+# rubocop:enable Metrics/PerceivedComplexity
