@@ -22,6 +22,8 @@ In this project, I've built a simplified Ruby linter for beginners, providing fe
 2. In the Terminal/Command Prompt, navigate to the parent directory of this project. (Capstone2 folder)
 3. Run rspec
 
+![rspeclinter](https://user-images.githubusercontent.com/71286979/114503588-92632600-9bfb-11eb-9b51-964ec7a1c73e.png)
+
 ## Built With
 
 - Ruby
