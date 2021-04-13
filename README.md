@@ -14,13 +14,12 @@ In this project, I've built a simplified Ruby linter for beginners, providing fe
 
 ## Getting Started:
 1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run 'git clone' with this repository's url.
-2. Navigate to the bin folder.
-3. Run linter.rb to check the test_file.txt for linter errors.
+2. Navigate to the project folder. (Capstone2 folder)
+3. Run linter.rb on the command line to check the test_file.txt for linter errors.
 
 ## Testing the code:
-1. In order to run rspec successfully in this project, open check_error.rb and change the file path in the @file variable from ('../test_file.txt') to ('./test_file.txt')
-2. In the Terminal/Command Prompt, navigate to the parent directory of this project. (Capstone2 folder)
-3. Run rspec
+1. In the Terminal/Command Prompt, navigate to the parent directory of this project. (Capstone2 folder)
+2. Run rspec on the command line.
 
 ![rspeclinter](https://user-images.githubusercontent.com/71286979/114503588-92632600-9bfb-11eb-9b51-964ec7a1c73e.png)
 
