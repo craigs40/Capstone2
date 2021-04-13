@@ -10,7 +10,7 @@ In this project, I've built a simplified Ruby linter for beginners, providing fe
 4. Indentation
 5. Empty line after "end" keyword
 
-![linterrb](https://user-images.githubusercontent.com/71286979/114502210-6b0b5980-9bf9-11eb-8636-ffdd7bccf517.png)
+![linterrb](https://user-images.githubusercontent.com/71286979/114536058-b84df200-9c1e-11eb-8dcc-cd57671bf5a3.png)
 
 ## Getting Started:
 1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run 'git clone' with this repository's url.
