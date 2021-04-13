@@ -10,6 +10,8 @@ In this project, I've built a Ruby linter for beginners, providing feedback for 
 4. Indentation
 5. Empty line after "end" keyword
 
+![linterrb](https://user-images.githubusercontent.com/71286979/114481707-1a810580-9bd3-11eb-890b-bb5d6d01fe11.png)
+
 ## Getting Started:
 1. Clone this repository to your machine via the green "code" button at the top, or open your Terminal/Command Prompt and run 'git clone' with this repository's url.
 2. Navigate to the project folder
